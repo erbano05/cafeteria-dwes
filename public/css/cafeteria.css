@@ -1,0 +1,204 @@
+:root {
+    --tinta: #1d1914;
+    --papel: #f4eee4;
+    --papel-2: #fffaf3;
+    --verde: #1c332b;
+    --verde-suave: #2d4f43;
+    --caldera: #d85a2a;
+    --oro: #b8893d;
+    --linea: #e3d5c2;
+    --sombra: 0 18px 40px rgba(36, 28, 20, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--tinta);
+    background:
+        radial-gradient(900px 420px at -10% -10%, rgba(216, 90, 42, 0.13), transparent 55%),
+        radial-gradient(700px 380px at 110% 0%, rgba(28, 51, 43, 0.08), transparent 50%),
+        var(--papel);
+    font-family: "Outfit", "Segoe UI", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+a { color: inherit; }
+
+.barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.9rem 6vw;
+    background: var(--verde);
+    color: #f6f1e8;
+}
+
+.marca {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    line-height: 1.05;
+}
+
+.marca strong {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 560;
+    font-size: 1.55rem;
+    letter-spacing: -0.03em;
+}
+
+.marca span {
+    margin-top: 0.2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #e4c98a;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.15rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #f6f1e8;
+    padding: 0.2rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.menu a:hover,
+.menu a.activo {
+    border-bottom-color: var(--caldera);
+}
+
+.pagina {
+    width: min(1040px, calc(100% - 8vw));
+    margin: 2.2rem auto 3rem;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.presentacion h1 {
+    margin: 0.35rem 0 0.8rem;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 560;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+}
+
+.kicker {
+    margin: 0;
+    color: var(--caldera);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.presentacion p {
+    max-width: 38rem;
+    margin: 0 0 1.2rem;
+    font-size: 1.12rem;
+}
+
+.sello {
+    width: 6.2rem;
+    height: 6.2rem;
+    margin-top: 0.6rem;
+    display: grid;
+    place-items: center;
+    border: 2px dashed var(--caldera);
+    border-radius: 50%;
+    color: var(--caldera);
+    transform: rotate(-8deg);
+    font-family: "Fraunces", Georgia, serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+}
+
+.tablero {
+    background: var(--papel-2);
+    border: 1px solid var(--linea);
+    border-radius: 1.3rem;
+    box-shadow: var(--sombra);
+    padding: 1.3rem 1.3rem 1.1rem;
+}
+
+.tablero h2 {
+    margin: 0 0 0.9rem;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.7rem;
+    font-weight: 560;
+}
+
+.carta {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.producto {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.72rem 0.35rem;
+    border-top: 1px solid var(--linea);
+    text-decoration: none;
+}
+
+a.producto:hover {
+    background: rgba(216, 90, 42, 0.06);
+}
+
+.codigo {
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 0.45rem;
+    background: var(--verde);
+    color: #f6f1e8;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.nombre { font-size: 1.08rem; }
+
+.precio {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.25rem;
+    color: var(--verde-suave);
+}
+
+.nota {
+    margin: 0.85rem 0 0;
+    color: #6d6256;
+    font-size: 0.92rem;
+}
+
+.pie {
+    padding: 1.2rem 6vw 1.6rem;
+    color: #ddc0a1;
+    font-size: 0.92rem;
+    background-color: var(--verde-suave);
+}
+
+.pie strong { color: var(--tinta); font-weight: 600; }
+
+@media (max-width: 800px) {
+    .barra { align-items: flex-start; flex-direction: column; }
+    .pagina { grid-template-columns: 1fr; margin-top: 1.4rem; }
+}
