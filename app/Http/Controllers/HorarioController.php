@@ -21,8 +21,12 @@ class HorarioController extends Controller {
             }
         }
 
+        $todos = $this->trabajadores();
+        $trabajadores = $todos[$dia["codigo"]];
+
         return view('horario.view', [
-            'dia' => $dia
+            'dia' => $dia,
+            'trabajadores' => $trabajadores
         ]);
     }
 
@@ -35,6 +39,18 @@ class HorarioController extends Controller {
             ["codigo" => "V", "dia" => "Viernes", "hora" => "9:00 - 13:00"],
             ["codigo" => "S", "dia" => "Sabado", "hora" => "Cerrado"],
             ["codigo" => "D", "dia" => "Domingo", "hora" => "Cerrado"],
+        ];
+    }
+
+    private function trabajadores(): array {
+        return [
+            "L" => ["Lucas", "Leo", "Lurdes"],
+            "M" => ["Mateo", "Marta", "Mikel"],
+            "X" => ["Xabier", "Xavi", "Ximena"],
+            "J" => ["Juan", "Julia", "Joseba"],
+            "V" => ["Victor", "Vanesa", "Valeria"],
+            "S" => [],
+            "D" => []
         ];
     }
 }

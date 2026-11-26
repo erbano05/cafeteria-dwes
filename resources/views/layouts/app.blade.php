@@ -21,6 +21,7 @@
             <a href="{{ url('/') }}">Inicio</a>
             <a href="{{ route('carta') }}">Carta</a>
             <a href="{{ route('horario') }}">Horario</a>
+            <a href="{{ route('normas') }}">Normas</a>
             <a href="{{ url('/pedido') }}">Pedido</a>
         </nav>
     </header>

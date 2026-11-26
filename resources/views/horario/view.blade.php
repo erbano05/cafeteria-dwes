@@ -5,14 +5,17 @@
 @section('titulo', 'Horario')
 
 @section('contenido')
-<h2>Horario</h2>
-<ul>
-    @foreach($horario as $dia)
-        <li><a href="{{ route() }}">
-            {{ $dia["codigo"] }}
-            · {{ $dia["dia"] }}
-            · {{ $dia["hora"] }}
-        </a></li>
-    @endforeach
-</ul>
+<h2>Horario - {{ $dia["dia"] }} ({{ $dia["codigo"] }})</h2>
+<p>{{ $dia["hora"] }}</p>
+
+<h3>Trabajadores</h3>
+@if(!empty($trabajadores))
+    <ul>
+        @foreach($trabajadores as $trabajador)
+            <li>{{ $trabajador }}</li>
+        @endforeach
+    </ul>
+@else
+    <p>No hay trabajadores este día</p>
+@endif
 @endsection
